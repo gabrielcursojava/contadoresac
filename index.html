@@ -642,6 +642,53 @@ body {
     }
     localStorage.setItem("visitas", visitas);
     document.getElementById("contador").textContent = visitas;
+
+
+
+    // Inicializar EmailJS con TU Public Key
+    (function() {
+        emailjs.init("3jojbXf4T_9oPbVjk"); // Public Key
+    })();
+
+    /* FUNCION EN ESCUCHA PARA ENVIO DE CORREO */
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const btn = document.getElementById('btnEnviar');
+        const estadoDiv = document.getElementById('mensajeEstado');
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+        estadoDiv.innerHTML = '<div class="alert alert-info">Enviando mensaje...</div>';
+        emailjs.sendForm('service_adrmcda', 'template_50trde4', this)
+            .then(function(response) {
+                console.log('✅ Éxito:', response);
+            })
+            .catch(function(error) {
+                console.log('❌ Error:', error); // Aquí capturas el 400
+                // Aquí muestras el mensaje de error al usuario
+            })
+            .catch(function(error) {
+                console.log('Error:', error);
+                let codigoError = error.status || error.code || 'Desconocido';
+                let textoError = error.text || error.message || 'Error sin descripción';
+                // Mostrar en la interfaz
+                estadoDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        ❌ Error ${codigoError}: ${textoError}<br>
+                        <small class="text-muted">Intenta nuevamente o contacta al administrador</small>
+                    </div>
+                `;
+
+            })
+            .finally(() => {
+                btn.textContent = 'Enviar';
+                btn.disabled = false;
+                setTimeout(() => {
+                    estadoDiv.innerHTML = '';
+                }, 5000);
+            });
+    });      
+    
+    
 </script>
 
 </body>
