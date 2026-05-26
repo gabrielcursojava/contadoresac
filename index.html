@@ -649,39 +649,47 @@ body {
         event.preventDefault();
         const btn = document.getElementById('btnEnviar');
         const estadoDiv = document.getElementById('mensajeEstado');
+        // Estado inicial
         btn.textContent = 'Enviando...';
         btn.disabled = true;
-        estadoDiv.innerHTML = '<div class="alert alert-info">Enviando mensaje...</div>';
-        emailjs.sendForm('service_adrmcda', 'template_50trde4', this)
-            .then(function(response) {
-                console.log('✅ Éxito:', response);
-            })
-            .catch(function(error) {
-                console.log('❌ Error:', error); // Aquí capturas el 400
-                // Aquí muestras el mensaje de error al usuario
-            })
-            .catch(function(error) {
-                console.log('Error:', error);
-                let codigoError = error.status || error.code || 'Desconocido';
-                let textoError = error.text || error.message || 'Error sin descripción';
-                // Mostrar en la interfaz
-                estadoDiv.innerHTML = `
-                    <div class="alert alert-danger">
-                        ❌ Error ${codigoError}: ${textoError}<br>
-                        <small class="text-muted">Intenta nuevamente o contacta al administrador</small>
-                    </div>
-                `;
+        estadoDiv.innerHTML = `
+            <div class="alert alert-info">
+                ⏳ Enviando mensaje...
+            </div>
+        `;
 
-            })
-            .finally(() => {
-                btn.textContent = 'Enviar';
-                btn.disabled = false;
-                setTimeout(() => {
-                    estadoDiv.innerHTML = '';
-                }, 5000);
-            });
-    });      
-    
+        emailjs.sendForm('service_adrmcda', 'template_50trde4', this)
+        .then(function(response) {
+            console.log('✅ Éxito:', response);
+            // 🔥 AQUÍ reemplazas el mensaje
+            estadoDiv.innerHTML = `
+                <div class="alert alert-success">
+                    ✅ Mensaje enviado exitosamente
+                </div>
+            `;
+
+            document.getElementById('contactForm').reset();
+        })
+        .catch(function(error) {
+            console.log('❌ Error:', error);
+            let codigoError = error.status || 'Error';
+            let textoError = error.text || 'No se pudo enviar el mensaje';
+            estadoDiv.innerHTML = `
+                <div class="alert alert-danger">
+                    ❌ ${codigoError}: ${textoError}
+                </div>
+            `;
+        })
+        .finally(() => {
+            btn.textContent = 'Enviar';
+            btn.disabled = false;
+
+            // Opcional: ocultar mensaje después de unos segundos
+            setTimeout(() => {
+                estadoDiv.innerHTML = '';
+            }, 5000);
+        });
+    });
     
 </script>
 
