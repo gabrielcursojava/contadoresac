@@ -531,12 +531,15 @@ body {
 
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form>
-                    <input type="text" class="form-control mb-3" placeholder="Nombre" required>
-                    <input type="email" class="form-control mb-3" placeholder="Correo" required>
-                    <textarea class="form-control mb-3" rows="4" placeholder="Mensaje"></textarea>
-                    <button class="btn btn-primary w-100">Enviar</button>
+               
+                <form  id="contactForm">
+                    <input type="text" id="nombre" name="name" class="form-control mb-3" placeholder="Nombre" required>
+                    <input type="email" id="correo" name="email" class="form-control mb-3" placeholder="Correo" required>
+                    <textarea id="mensaje" name="message" class="form-control mb-3" rows="4" placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="btn btn-primary w-100" id="btnEnviar">Enviar</button>
                 </form>
+                <div id="mensajeEstado" class="mt-3 text-center"></div>
+                
             </div>
         </div>
     </div>
