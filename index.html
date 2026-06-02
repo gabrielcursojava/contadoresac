@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soluciones Contables</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 (para los iconos profesionales) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts (Inter, para un look moderno) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</script>
+
     <style>
-        body {
+    /* Estilos adicionales para los mensajes decorreo */
+    .alert {
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    .alert-info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+    }
+    /* FIN Estilos adicionales para los mensajes decorreo */
+
+
+body {
             background-color: #f4f7f9;
             font-family: Arial, sans-serif;
         }
@@ -156,80 +177,80 @@
             letter-spacing: 0.5px;
         }
 
-/* LINKS */
-.navbar-nav .nav-link {
-    color: #221eed !important;
-    font-weight: 500;
-    margin: 0 10px;
-    position: relative;
-    transition: color 0.3s ease;
-}
+    /* LINKS */
+    .navbar-nav .nav-link {
+        color: #221eed !important;
+        font-weight: 500;
+        margin: 0 10px;
+        position: relative;
+        transition: color 0.3s ease;
+    }
 
-/* HOVER COLOR */
-.navbar-nav .nav-link:hover {
-    color: #1abc9c !important;
-}
+    /* HOVER COLOR */
+    .navbar-nav .nav-link:hover {
+        color: #1abc9c !important;
+    }
 
-/* ANIMACIÓN SUBRAYADO */
-.navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: #1abc9c;
-    transition: width 0.3s ease;
-}
+    /* ANIMACIÓN SUBRAYADO */
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 2px;
+        background: #1abc9c;
+        transition: width 0.3s ease;
+    }
 
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
 
-/* FIX NAVBAR TOP SPACING */
-body {
-    padding-top: 70px;
-}
-
-
-/* SECCIÓN */
-.seccion-quienes {
-    padding: 80px 0;
-    background: #f8f9fa;
-}
-
-/* TÍTULO */
-.titulo-quienes {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #ff7f7f; /* salmón elegante */
-    margin-bottom: 25px;
-    position: relative;
-}
-
-/* línea decorativa bajo título */
-.titulo-quienes::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #ff7f7f;
-    margin: 10px auto 0;
-}
-
-/* TEXTO */
-.texto-quienes {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
+    /* FIX NAVBAR TOP SPACING */
+    body {
+        padding-top: 70px;
+    }
 
 
-/* ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1*/
+    /* SECCIÓN */
+    .seccion-quienes {
+        padding: 80px 0;
+        background: #f8f9fa;
+    }
+
+    /* TÍTULO */
+    .titulo-quienes {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #ff7f7f; /* salmón elegante */
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    /* línea decorativa bajo título */
+    .titulo-quienes::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #ff7f7f;
+        margin: 10px auto 0;
+    }
+
+    /* TEXTO */
+    .texto-quienes {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+
+    /* ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1 ESTILOS CSS PARA LA MODAL1*/
     /* Aplicamos la fuente a todo el modal para un look profesional */
     .modal-content, .modal-body, .metric-label, .amount, .trend {
         font-family: 'Inter', sans-serif;
@@ -404,7 +425,7 @@ body {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand bi bi-easel2" href="#">
             Un apoyo al emprendedor
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -414,19 +435,19 @@ body {
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link bi bi-bank" href="#"> Inicio</a>
+                </li>
+
+                <li class="nav-item me-3">
+                    <a class="nav-link bi bi-check-circle text-success" href="#"> Quiénes Somos</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#quienes">Quiénes Somos</a>
+                    <a class="nav-link bi bi-inboxes-fill text-success" href="#servicios"> Servicios</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#servicios">Servicios</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacto">Contacto</a>
+                    <a class="nav-link bi bi-cup-hot-fill text-muted" href="#contacto"> Contacto</a>
                 </li>
             </ul>
         </div>
@@ -435,8 +456,8 @@ body {
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>Soluciones Contables</h1>
-        <p class="lead" style="color:white">Asesoría confiable para empresas y emprendedores</p>
+        <h1 class="bi bi-rocket-takeoff"> Soluciones Contables</h1>
+        <p class="lead" style="color:white"><b>Asesoría confiable para empresas y emprendedores</b></p>
     </div>
     <div class="col-md-6 text-center">
         <img src="imagenes/logo.jpg" alt="Logo" class="hero-logo">
@@ -450,7 +471,7 @@ body {
         <div class="card">
             <div class="col-md-8 mx-auto text-center">
 
-                <h2 class="titulo-quienes">Quiénes Somos</h2>
+                <h2 class="titulo-quienes bi bi-sticky"> Quiénes Somos</h2>
 
                 <p class="texto-quienes" style="color:#221eed">
                     Somos especialistas en asesoría contable, tributaria y financiera para pequeñas empresas y emprendedores. 
@@ -469,21 +490,9 @@ body {
 <!-- SERVICIOS -->
 <section id="servicios" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5" style="color:#ff7f7f"><b>Nuestros Servicios</b></h2>
+        <h2 class="text-center bi bi-tools mb-5" style="color:#ff7f7f"><b> Nuestros Servicios</b></h2>
         <div class="row g-4">
-            <!-- Nota: los dibujos se encuentran en https://undraw.co/illustrations/2 -->
-
-            <!--
-            <div class="col-md-4">
-                <div class="card" data-bs-target="#modalServicio1">
-                    <img src="imagenes/dibujo1.svg" alt="Servicio 1" style="height: 170px; object-fit: contain;">
-                    <div class="card-body text-center">
-                        <h5>Asesoría Contable</h5>
-                        <p>Gestión completa y ordenada de tu contabilidad.</p>
-                    </div>
-                </div>
-            </div>
-            -->
+           <!-- Nota: los dibujos planos se encuentran en https://undraw.co/illustrations/2 -->
 
             <div class="col-md-4">
                 <div class="card" data-bs-toggle="modal" data-bs-target="#modalServicio1" style="cursor:pointer;">
@@ -497,6 +506,7 @@ body {
 
                 </div>
             </div>
+
 
             <div class="col-md-4">
                 <div class="card">
@@ -525,7 +535,7 @@ body {
 <!-- CONTACTO -->
 <section id="contacto" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4" style="color:#ff7f7f"><b>Contáctanos</b></h2>
+        <h2 class="text-center mb-4 bi bi-envelope-paper" style="color:#ff7f7f"><b> Contáctanos</b></h2>
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <form  id="contactForm">
@@ -600,10 +610,10 @@ body {
             <p class="team-role mb-0">Contador Público</p>
           </div>
         </div>
-        
+
+
       </div>
     </div>
-    
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
     </div>
@@ -612,12 +622,10 @@ body {
 </div>
 
 
-
 <!-- FOOTER -->
 <footer class="text-center py-3">
     <div class="container">
-        <p>© 2026 Soluciones Contables</p>
-        <p>+56 9 4976 0120 - +56 9 5930 1441</p>
+        <p>© 2026 Soluciones Contables Fono: +56 9 4976 0120</p>
         <p>Visitas: <span id="contador"></span></p>
     </div>
 </footer>
@@ -626,9 +634,9 @@ body {
 <a href="https://wa.me/56912345678" class="whatsapp" target="_blank" !important; >
     <i class="bi bi-whatsapp" style="font-family: 'bootstrap-icons' !important;"></i>
 </a>
-    
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
+<!-- OBLIGATORIO TENER ESTE LINK BOOTSTRAP EN LA CABECERA PARA EL ASUNTO DEL CORREO -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 <script>
     let visitas = localStorage.getItem("visitas");
     if (visitas === null) {
@@ -639,19 +647,63 @@ body {
     localStorage.setItem("visitas", visitas);
     document.getElementById("contador").textContent = visitas;
 
-    // Inicializar EmailJS con Public Key
+    // Inicializar EmailJS con TU Public Key
     (function() {
         emailjs.init("3jojbXf4T_9oPbVjk"); // Public Key
     })();
 
+    
     /* FUNCION EN ESCUCHA PARA ENVIO DE CORREO */
+    /*
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const btn = document.getElementById('btnEnviar');
         const estadoDiv = document.getElementById('mensajeEstado');
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+        estadoDiv.innerHTML = '<div class="alert alert-info">Enviando mensaje...</div>';
+        emailjs.sendForm('service_adrmcda', 'template_50trde4', this)
+            .then(function(response) {
+                console.log('✅ Éxito:', response);
+            })
+            .catch(function(error) {
+                console.log('❌ Error:', error); // Aquí capturas el 400
+                // Aquí muestras el mensaje de error al usuario
+            })
+            .catch(function(error) {
+                console.log('Error:', error);
+                let codigoError = error.status || error.code || 'Desconocido';
+                let textoError = error.text || error.message || 'Error sin descripción';
+                // Mostrar en la interfaz
+                estadoDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        ❌ Error ${codigoError}: ${textoError}<br>
+                        <small class="text-muted">Intenta nuevamente o contacta al administrador</small>
+                    </div>
+                `;
+
+            })
+            .finally(() => {
+                btn.textContent = 'Enviar';
+                btn.disabled = false;
+                setTimeout(() => {
+                    estadoDiv.innerHTML = '';
+                }, 5000);
+            });
+    });  
+    */    
+    
+    /* FUNCION EN ESCUCHA PARA ENVIO DE CORREO */
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const btn = document.getElementById('btnEnviar');
+        const estadoDiv = document.getElementById('mensajeEstado');
+
         // Estado inicial
         btn.textContent = 'Enviando...';
         btn.disabled = true;
+
         estadoDiv.innerHTML = `
             <div class="alert alert-info">
                 ⏳ Enviando mensaje...
@@ -659,8 +711,10 @@ body {
         `;
 
         emailjs.sendForm('service_adrmcda', 'template_50trde4', this)
+
         .then(function(response) {
             console.log('✅ Éxito:', response);
+
             // 🔥 AQUÍ reemplazas el mensaje
             estadoDiv.innerHTML = `
                 <div class="alert alert-success">
@@ -670,16 +724,20 @@ body {
 
             document.getElementById('contactForm').reset();
         })
+
         .catch(function(error) {
             console.log('❌ Error:', error);
+
             let codigoError = error.status || 'Error';
             let textoError = error.text || 'No se pudo enviar el mensaje';
+
             estadoDiv.innerHTML = `
                 <div class="alert alert-danger">
                     ❌ ${codigoError}: ${textoError}
                 </div>
             `;
         })
+
         .finally(() => {
             btn.textContent = 'Enviar';
             btn.disabled = false;
@@ -690,7 +748,7 @@ body {
             }, 5000);
         });
     });
-    
+
 </script>
 
 </body>
